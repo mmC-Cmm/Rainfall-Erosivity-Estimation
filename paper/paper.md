@@ -14,7 +14,6 @@ authors:
 affiliations:
  - name: School of Civil and Environmental Engineering, Oklahoma State University, United States
    index: 1
-   ror: 00hx57361
 
 
 date: 15 August 2025
