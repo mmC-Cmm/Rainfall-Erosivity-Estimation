@@ -29,20 +29,31 @@ The input data are organized in the folder **`Rain_Data_High_Quality`** with the
   - **`time`**: Timestamp in the format `YYYY-MM-DD HH:MM:SS`  
   - **`rain`**: Cumulative rainfall (mm, SI units)
 
-The input data must be stored following this hierarchy.  
+The input data is not limited to Mesonet records, any cumulative rainfall data stored following this hierarchy should work. 
 
 ## Functions for Erosivity Estimation
 
-there are eight functions including:
-1. identify_storms.py
-2. process_intervals.py
-3. separate_storm_events.py
-4. erosive_storms.py
-5. rainfall_energy.py
-6. max_30_min_rainfall.py
-7. rainfall_erosivity.py
-8. monthly_erosivity.py
+This repository provides eight Python functions (scripts) that can be used sequentially to estimate rainfall erosivity from raw rainfall data:  
+
+1. **`identify_storms.py`**  
+   This function removes missing data and identifies individual storms.  
+   - If the input data contains missing or negative values, they are replaced with `0`.  
+   - A storm is defined as a period when the rainfall (`rain`) value begins to increase from `0` and continues until the accumulation stops.  
+
+The output file only save the rainfall when storm taking place in following hierarchy:
+- **`<stid>`**: Oklahoma Mesonet site ID  
+- **`<year>`**: Year of observation  
+- **`<stid>_<yearmonth>_s<storm number>.csv`**: CSV file containing three variables:
+  - **`stid`**: Site ID  
+  - **`time`**: Timestamp in the format `YYYY-MM-DD HH:MM:SS`  
+  - **`rain`**: Cumulative rainfall (mm, SI units)
    
+3. **`process_intervals.py`**: Since the Mesonet 5-minute interval rainfall data is cumulative rainfall amount, this function is to determine the rainfall amount in each time interval.
+4. **`erosive_storms.py`**  
+5. **`rainfall_energy.py`**  
+6. **`max_30_min_rainfall.py`**  
+7. **`rainfall_erosivity.py`**  
+8. **`monthly_erosivity.py`**  
 
 ## Jupyter Notebook
 
