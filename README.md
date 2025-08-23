@@ -33,12 +33,23 @@ The input data must be stored following this hierarchy.
 
 ## Functions for Erosivity Estimation
 
-
+there are eight functions including:
+1. identify_storms.py
+2. process_intervals.py
+3. separate_storm_events.py
+4. erosive_storms.py
+5. rainfall_energy.py
+6. max_30_min_rainfall.py
+7. rainfall_erosivity.py
+8. monthly_erosivity.py
+   
 
 ## Jupyter Notebook
 
 The Jupyter notebook **`Reproduction.ipynb`** demonstrates how to reproduce the time series of monthly rainfall erosivity from 5-minute interval rainfall records in **`Rain_Data_High_Quality`** using the provided functions.  
+The notebook is organized into eight sections, each corresponding to a specific function that can be run step by step. Alternatively, the entire workflow can be executed at once using **“Run All.”**  
+Users may define their own input and output paths or use the default settings provided in the notebook.  
 
-the required 
+
 
 
