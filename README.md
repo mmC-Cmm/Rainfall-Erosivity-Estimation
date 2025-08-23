@@ -1,5 +1,5 @@
 # Rainfall Erosivity Estimation
-This repository includes functions for estimating rainfall erosivity from individual erosivity storms.
+This repository includes input files, jupyter notebook calling function and functions for estimating rainfall erosivity from individual erosivity storms.
 The functions include:
 1. idensity_storms.py
 2. process_intervals.py
