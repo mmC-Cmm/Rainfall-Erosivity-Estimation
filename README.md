@@ -24,7 +24,7 @@ The input data are organized in the folder **`Rain_Data_High_Quality`** with the
 
 - **`<stid>`**: Oklahoma Mesonet site ID  
 - **`<year>`**: Year of observation  
-- **`<stid>_<yearmonth>.csv`**: CSV file containing three variables:  
+- **`<stid>_<yearmonth>.csv`**: CSV file containing 5-minute interval rainfall records including three variables:  
   - **`stid`**: Site ID  
   - **`time`**: Timestamp in the format `YYYY-MM-DD HH:MM:SS`  
   - **`rain`**: Cumulative rainfall (mm, SI units)
@@ -37,23 +37,26 @@ This repository provides eight Python functions (scripts) that can be used seque
 
 1. **`identify_storms.py`**  
    This function removes missing data and identifies individual storms.  
-   - If the input data contains missing or negative values, they are replaced with `0`.  
+   - Missing or negative rainfall values are replaced with `0`.  
    - A storm is defined as a period when the rainfall (`rain`) value begins to increase from `0` and continues until the accumulation stops.  
 
-The output file only save the rainfall when storm taking place in following hierarchy:
-- **`<stid>`**: Oklahoma Mesonet site ID  
-- **`<year>`**: Year of observation  
-- **`<stid>_<yearmonth>_s<storm number>.csv`**: CSV file containing three variables:
-  - **`stid`**: Site ID  
-  - **`time`**: Timestamp in the format `YYYY-MM-DD HH:MM:SS`  
-  - **`rain`**: Cumulative rainfall (mm, SI units)
+   The output files only contain rainfall records during storm events, organized in the following hierarchy:
+    - **`<stid>`**: Oklahoma Mesonet site ID  
+    - **`<year>`**: Year of observation  
+    - **`<stid>_<yearmonth>.csv`**: Each CSV file corresponds to a single storm and includes 5-minute rainfall data with three variables:
+      - **`stid`**: Site ID  
+      - **`time`**: Timestamp in the format `YYYY-MM-DD HH:MM:SS`  
+      - **`rain`**: Cumulative rainfall (mm, SI units)  
+
+
    
-3. **`process_intervals.py`**: Since the Mesonet 5-minute interval rainfall data is cumulative rainfall amount, this function is to determine the rainfall amount in each time interval.
-4. **`erosive_storms.py`**  
-5. **`rainfall_energy.py`**  
-6. **`max_30_min_rainfall.py`**  
-7. **`rainfall_erosivity.py`**  
-8. **`monthly_erosivity.py`**  
+3. **`process_intervals.py`**:
+   Since the Mesonet 5-minute interval rainfall data is cumulative rainfall amount, this function is to determine the rainfall amount in each time interval.
+5. **`erosive_storms.py`**  
+6. **`rainfall_energy.py`**  
+7. **`max_30_min_rainfall.py`**  
+8. **`rainfall_erosivity.py`**  
+9. **`monthly_erosivity.py`**  
 
 ## Jupyter Notebook
 
