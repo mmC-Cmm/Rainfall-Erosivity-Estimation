@@ -1,6 +1,10 @@
 # Rainfall Erosivity Estimation
 
-This repository contains input data, a Jupyter notebook, and functions for estimating rainfall erosivity from individual storm events. The custormer can download this repository save the input data, the jupyter notebook, and all functions in one folder. after install all required package, the time series of monthly rainfall erosivity for each site can be obtained by clicking "Run All".
+This repository contains input data, Python functions for estimating rainfall erosivity from individual storm events, and a Jupyter notebook.  
+To use the repository, download all files and place the input data, notebook, and function scripts into a single folder.  
+
+After installing the required packages, you can generate the time series of monthly rainfall erosivity for each site by opening the notebook and selecting **“Run All”**.  
+
 
 ## Required Package
 
@@ -27,9 +31,14 @@ The input data are organized in the folder **`Rain_Data_High_Quality`** with the
 
 The input data must be stored following this hierarchy.  
 
+## Functions for Erosivity Estimation
+
+
+
 ## Jupyter Notebook
 
-The Jupyter notebook **`Reproduction_Use.ipynb`** demonstrates how to reproduce the analysis by importing the files from **`Rain_Data_High_Quality`** and applying the provided functions.  
+The Jupyter notebook **`Reproduction.ipynb`** demonstrates how to reproduce the time series of monthly rainfall erosivity from 5-minute interval rainfall records in **`Rain_Data_High_Quality`** using the provided functions.  
+
 the required 
 
 
