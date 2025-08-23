@@ -12,7 +12,7 @@ This project requires Python 3.8+ and the following packages:
 ### Install with pip
 ```bash
 pip install pandas numpy
-
+```
 
 ## Input Data Structure
 
