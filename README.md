@@ -24,12 +24,13 @@ The input data are organized in the folder **`Rain_Data_High_Quality`** with the
 
 - **`<stid>`**: Oklahoma Mesonet site ID  
 - **`<year>`**: Year of observation  
-- **`<stid>_<yearmonth>.csv`**: CSV file containing 5-minute interval rainfall records including three variables:  
+- **`<stid>_<yearmonth>.csv`**: CSV file containing 5-minute interval rainfall records with three variables:  
   - **`stid`**: Site ID  
   - **`time`**: Timestamp in the format `YYYY-MM-DD HH:MM:SS`  
-  - **`rain`**: Cumulative rainfall (mm, SI units)
+  - **`rain`**: Cumulative rainfall (mm, SI units)  
 
-The input data is not limited to Mesonet records, any cumulative rainfall data stored following this hierarchy should work. 
+Although the example provided uses Oklahoma Mesonet records, the input data are not limited to this source. Any cumulative rainfall dataset that follows this hierarchy and format will work.  
+
 
 ## Functions for Erosivity Estimation
 
@@ -47,16 +48,22 @@ This repository provides eight Python functions (scripts) that can be used seque
       - **`stid`**: Site ID  
       - **`time`**: Timestamp in the format `YYYY-MM-DD HH:MM:SS`  
       - **`rain`**: Cumulative rainfall (mm, SI units)  
-
+ 
+2. **`process_intervals.py`**:
+   Since Mesonet’s 5-minute data are cumulative rainfall, this function computes the rainfall amount (mm) and rainfall intensity (mm/hr) for each time interval.
+   
+3. **`erosive_storms.py`**
+   This function excludes storm events with total rainfall < 12.7 mm. The remaining events are treated as erosive storms and are used to estimate rainfall erosivity.
+   
+4. **`rainfall_energy.py`**
+   - **`rainfall_energy.py`**  
+  This function calculates **rainfall energy** in each time interval using the **kinetic energy equation** as described in USDA-ARS (2013)  
+  [RUSLE2 Science Documentation (PDF)](https://www.ars.usda.gov/ARSUserFiles/60600505/rusle/rusle2_science_doc.pdf).
 
    
-3. **`process_intervals.py`**:
-   Since the Mesonet 5-minute interval rainfall data is cumulative rainfall amount, this function is to determine the rainfall amount in each time interval.
-5. **`erosive_storms.py`**  
-6. **`rainfall_energy.py`**  
-7. **`max_30_min_rainfall.py`**  
-8. **`rainfall_erosivity.py`**  
-9. **`monthly_erosivity.py`**  
+9. **`max_30_min_rainfall.py`**  
+10. **`rainfall_erosivity.py`**  
+11. **`monthly_erosivity.py`**  
 
 ## Jupyter Notebook
 
