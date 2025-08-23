@@ -53,12 +53,11 @@ This repository provides eight Python functions (scripts) that can be used seque
    Since Mesonet’s 5-minute data are cumulative rainfall, this function computes the rainfall amount (mm) and rainfall intensity (mm/hr) for each time interval.
    
 3. **`erosive_storms.py`**
-   This function excludes storm events with total rainfall < 12.7 mm. The remaining events are treated as erosive storms and are used to estimate rainfall erosivity.
+   This function excludes storm events with total rainfall < 12.7 mm. The remaining events are treated as erosive storms and are used to estimate rainfall erosivity[USDA-ARS (2013)(https://www.ars.usda.gov/ARSUserFiles/60600505/rusle/rusle2_science_doc.pdf)].
    
 4. **`rainfall_energy.py`**
    - **`rainfall_energy.py`**  
-  This function calculates **rainfall energy** in each time interval using the **kinetic energy equation** as described in USDA-ARS (2013)  
-  [RUSLE2 Science Documentation (PDF)](https://www.ars.usda.gov/ARSUserFiles/60600505/rusle/rusle2_science_doc.pdf).
+  This function calculates **rainfall energy** in each time interval using the **kinetic energy equation** as described in [USDA-ARS (2013)(https://www.ars.usda.gov/ARSUserFiles/60600505/rusle/rusle2_science_doc.pdf)].
 
    
 9. **`max_30_min_rainfall.py`**  
