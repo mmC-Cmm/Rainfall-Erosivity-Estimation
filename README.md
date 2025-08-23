@@ -1,11 +1,11 @@
 # Rainfall Erosivity Estimation
-This repository includes input files, jupyter notebook calling function and functions for estimating rainfall erosivity from individual erosivity storms.
-The functions include:
-1. idensity_storms.py
-2. process_intervals.py
-3. separate_storm_events.py
-4. erosive_storms.py
-5. rainfall_energy.py
-6. max_30_min_rainfall.py
-7. rainfall_erosivity.py
-8. monthly_erosivity.py
+
+This repository contains input data, Jupyter notebooks, and functions for estimating rainfall erosivity from individual storm events.
+
+## Input Data Structure
+
+The input data are organized in the folder **`Rain_Data_High_Quality`** with the following hierarchy:
+
+- **`<stid>`**: Station ID  
+- **`<year>`**: Year of observation  
+- **`<stid>_<yearmonth>.csv`**: CSV file containing rainfall data for a given station and month  
