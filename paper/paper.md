@@ -40,7 +40,6 @@ In this study, rainfall erosivity was computed using the kinetic energy equation
    
 7. **`monthly_erosivity.py`**: This function aggregates rainfall erosivity from individual storms to obtain monthly total erosivity for each site.
 
-
 # Statement of need
 
 The Python functions developed in this project provide researchers with a framework for estimating rainfall erosivity. These functions automate the processing of high-resolution rainfall data, identify storm events, and compute storm-based erosivity using the kinetic energy equation. The outputs can be aggregated into monthly and annual time series, which are directly applicable for analyzing historical trends, estimating soil loss with USLE-based models, and evaluating temporal variability. By using these tools, researchers can efficiently generate erosivity datasets from gauge observations, providing reliable reference values for calibration, validation, and training when applying regression approaches or machine learning models to predict rainfall erosivity.
