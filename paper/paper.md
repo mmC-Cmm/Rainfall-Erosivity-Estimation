@@ -20,7 +20,39 @@ bibliography: paper.bib
 
 # Summary
 
-Rainfall erosivity is a key parameter in the Universal Soil Loss Equation (USLE), used to predict soil erosion caused by water. It was developed to quantify the combined effects of rainfall and runoff on soil loss. In this study, rainfall erosivity was computed using the kinetic energy equation based on 5-minute interval rainfall records. Python functions developed in this project is to estimate rainfall erosivity from individual storm events.
+Rainfall erosivity is a key parameter in the Universal Soil Loss Equation (USLE), used to predict soil erosion caused by water. It was developed to quantify the combined effects of rainfall and runoff on soil loss. In this study, rainfall erosivity was computed using the kinetic energy equation based on 5-minute interval rainfall records. Python functions developed in this project is to estimate rainfall erosivity from individual storm events. The description of the functions are below:
+1. **`identify_storms.py`**  
+   This function removes missing data and identifies individual storms.  
+   - Missing or negative rainfall values are replaced with `0`.  
+   - A storm is defined as a period when the rainfall (`rain`) value begins to increase from `0` and continues until the accumulation stops.  
+
+   The output files only contain rainfall records during storm events, organized in the following hierarchy:
+    - **`<stid>`**: Oklahoma Mesonet site ID  
+    - **`<year>`**: Year of observation  
+    - **`<stid>_<yearmonth>.csv`**: Each CSV file corresponds to a single storm and includes 5-minute rainfall data with three variables:
+      - **`stid`**: Site ID  
+      - **`time`**: Timestamp in the format `YYYY-MM-DD HH:MM:SS`  
+      - **`rain`**: Cumulative rainfall (mm, SI units)  
+ 
+2. **`process_intervals.py`**
+   Since Mesonet’s 5-minute data are cumulative rainfall, this function computes the rainfall amount (mm) and rainfall intensity (mm/hr) for each time interval.
+   
+3. **`erosive_storms.py`**
+   This function excludes storm events with total rainfall < 12.7 mm. The remaining events are treated as erosive storms and are used to estimate rainfall erosivity [USDA-ARS (2013)](https://www.ars.usda.gov/ARSUserFiles/60600505/rusle/rusle2_science_doc.pdf).
+   
+4. **`rainfall_energy.py`**
+  This function calculates unit rainfall energy using the kinetic energy equation and then derives the rainfall energy in each time interval as described in [USDA-ARS (2013)](https://www.ars.usda.gov/ARSUserFiles/60600505/rusle/rusle2_science_doc.pdf).
+
+5. **`max_30_min_rainfall.py`**
+   This function identifies the maximum rainfall amount within any consecutive 30-minute period using a rolling window method.
+   
+6. **`rainfall_erosivity.py`**
+    This function calculates the **kinetic energy of a storm (E)** as the sum of rainfall energy across all time intervals.  
+  It then computes the **maximum 30-minute intensity (I₃₀)** from the maximum 30-minute rainfall amount, converted to mm/hr.  
+  Finally, the storm erosivity is determined as **E × I₃₀**.
+   
+7. **`monthly_erosivity.py`**
+    This function aggregates rainfall erosivity from individual storms to obtain monthly total erosivity for each site.
 
 
 # Statement of need
