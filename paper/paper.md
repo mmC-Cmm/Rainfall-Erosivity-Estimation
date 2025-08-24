@@ -35,8 +35,8 @@ In this study, rainfall erosivity was computed using the kinetic energy equation
 5. **`max_30_min_rainfall.py`**: This function identifies the maximum rainfall amount within any consecutive 30-minute period using a rolling window method.
    
 6. **`rainfall_erosivity.py`**: This function calculates the **kinetic energy of a storm (E)** as the sum of rainfall energy across all time intervals.  
-  It then computes the **maximum 30-minute intensity (I₃₀)** from the maximum 30-minute rainfall amount, converted to mm/hr.  
-  Finally, the storm erosivity is determined as **E × I₃₀**.
+  It then computes the **maximum 30-minute intensity (I)** from the maximum 30-minute rainfall amount, converted to mm/hr.  
+  Finally, the storm erosivity is determined as **E × I**.
    
 7. **`monthly_erosivity.py`**: This function aggregates rainfall erosivity from individual storms to obtain monthly total erosivity for each site.
 
