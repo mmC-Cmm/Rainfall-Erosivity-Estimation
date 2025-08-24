@@ -34,7 +34,7 @@ Although the example provided uses Oklahoma Mesonet records, the input data are 
 
 ## Functions for Erosivity Estimation
 
-This repository provides eight Python functions (scripts) that can be used sequentially to estimate rainfall erosivity from raw rainfall data:  
+This repository provides seven Python functions (scripts) that can be used sequentially to estimate rainfall erosivity from raw rainfall data:  
 
 1. **`identify_storms.py`**  
    This function removes missing data and identifies individual storms.  
