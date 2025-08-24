@@ -4,23 +4,13 @@ tags:
   - Python
   - rainfall erosivity
   - water erosion
-  - rulse2
+  - RUSLE2
     
 authors:
   - name: Mengting Chen
-    orcid: 0000-0000-0000-0000
+    orcid: 0000-0002-6971-5384
     equal-contrib: true
     affiliation: "1, 2" # (Multiple affiliations must be quoted)
-  - name: Author Without ORCID
-    equal-contrib: true # (This is how you can denote equal contributions between multiple authors)
-    affiliation: 2
-  - name: Author with no affiliation
-    corresponding: true # (This is how to denote the corresponding author)
-    affiliation: 3
-  - given-names: Ludwig
-    dropping-particle: van
-    surname: Beethoven
-    affiliation: 3
 affiliations:
  - name: Lyman Spitzer, Jr. Fellow, Princeton University, United States
    index: 1
