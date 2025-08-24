@@ -25,57 +25,23 @@ Rainfall erosivity is a key parameter in the Universal Soil Loss Equation (USLE)
 
 2. **`process_intervals.py`**: Since Mesonet’s 5-minute data are cumulative rainfall, this function computes the rainfall amount (mm) and rainfall intensity (mm/hr) for each time interval.
    
-3. **`erosive_storms.py`**: This function excludes storm events with total rainfall < 12.7 mm. The remaining events are treated as erosive storms and are used to estimate rainfall erosivity [USDA-ARS (2013)](https://www.ars.usda.gov/ARSUserFiles/60600505/rusle/rusle2_science_doc.pdf).
-   
-4. **`rainfall_energy.py`**: This function calculates unit rainfall energy using the kinetic energy equation and then derives the rainfall energy in each time interval as described in [USDA-ARS (2013)](https://www.ars.usda.gov/ARSUserFiles/60600505/rusle/rusle2_science_doc.pdf).
+3. **`erosive_storms.py`**: This function excludes storm events with total rainfall < 12.7 mm. The remaining events are treated as erosive storms and are used to estimate rainfall erosivity '[@USDA-ARS:2013]'
+4. 
+5. **`rainfall_energy.py`**: This function calculates unit rainfall energy using the kinetic energy equation and then derives the rainfall energy in each time interval as described in [USDA-ARS (2013)](https://www.ars.usda.gov/ARSUserFiles/60600505/rusle/rusle2_science_doc.pdf).
 
-5. **`max_30_min_rainfall.py`**: This function identifies the maximum rainfall amount within any consecutive 30-minute period using a rolling window method.
+6. **`max_30_min_rainfall.py`**: This function identifies the maximum rainfall amount within any consecutive 30-minute period using a rolling window method.
    
-6. **`rainfall_erosivity.py`**: This function calculates the **kinetic energy of a storm (E)** as the sum of rainfall energy across all time intervals.  
+7. **`rainfall_erosivity.py`**: This function calculates the **kinetic energy of a storm (E)** as the sum of rainfall energy across all time intervals.  
   It then computes the **maximum 30-minute intensity (I₃₀)** from the maximum 30-minute rainfall amount, converted to mm/hr.  
   Finally, the storm erosivity is determined as **E × I₃₀**.
    
-7. **`monthly_erosivity.py`**: This function aggregates rainfall erosivity from individual storms to obtain monthly total erosivity for each site.
+8. **`monthly_erosivity.py`**: This function aggregates rainfall erosivity from individual storms to obtain monthly total erosivity for each site.
 
 
 # Statement of need
 
-`Gala` is an Astropy-affiliated Python package for galactic dynamics. Python
-enables wrapping low-level languages (e.g., C) for speed without losing
-flexibility or ease-of-use in the user-interface. The API for `Gala` was
-designed to provide a class-based and user-friendly interface to fast (C or
-Cython-optimized) implementations of common operations such as gravitational
-potential and force evaluation, orbit integration, dynamical transformations,
-and chaos indicators for nonlinear dynamics. `Gala` also relies heavily on and
-interfaces well with the implementations of physical units and astronomical
-coordinate systems in the `Astropy` package [@astropy] (`astropy.units` and
-`astropy.coordinates`).
+The time series of monthly erosivity datasets can be generated through those python functions, which directly used to analyze rainfall erosivity trends over their historical record lengths. The understanding of trend pattern in rainfall erosivity is essential for researchers interested in the predicting future erosivity. From the monthly time series, long-term average monthly and annual erosivity can be derived to support soil loss estimation in Oklahoma, thereby informing local soil and water conservation practices. Interannual variations in erosivity can also guide decision-makers in identifying vulnerable seasons. Moreover, monthly erosivity records provide critical input for deriving land cover and management factors in the USLE-based models7,8. In addition, gauge-based datasets serve as reference data for evaluating the estimates from regression approaches and machine learning models. 
 
-`Gala` was designed to be used by both astronomical researchers and by
-students in courses on gravitational dynamics or astronomy. It has already been
-used in a number of scientific publications [@Pearson:2017] and has also been
-used in graduate courses on Galactic dynamics to, e.g., provide interactive
-visualizations of textbook material [@Binney:2008]. The combination of speed,
-design, and support for Astropy functionality in `Gala` will enable exciting
-scientific explorations of forthcoming data releases from the *Gaia* mission
-[@gaia] by students and experts alike.
-
-# Mathematics
-
-Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
-
-Double dollars make self-standing equations:
-
-$$\Theta(x) = \left\{\begin{array}{l}
-0\textrm{ if } x < 0\cr
-1\textrm{ else}
-\end{array}\right.$$
-
-You can also use plain \LaTeX for equations
-\begin{equation}\label{eq:fourier}
-\hat f(\omega) = \int_{-\infty}^{\infty} f(x) e^{i\omega x} dx
-\end{equation}
-and refer to \autoref{eq:fourier} from text.
 
 # Citations
 
