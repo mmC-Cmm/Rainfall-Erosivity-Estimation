@@ -49,7 +49,7 @@ This repository provides eight Python functions (scripts) that can be used seque
       - **`time`**: Timestamp in the format `YYYY-MM-DD HH:MM:SS`  
       - **`rain`**: Cumulative rainfall (mm, SI units)  
  
-2. **`process_intervals.py`**:
+2. **`process_intervals.py`**
    Since Mesonet’s 5-minute data are cumulative rainfall, this function computes the rainfall amount (mm) and rainfall intensity (mm/hr) for each time interval.
    
 3. **`erosive_storms.py`**
@@ -66,7 +66,8 @@ This repository provides eight Python functions (scripts) that can be used seque
   It then computes the **maximum 30-minute intensity (I₃₀)** from the maximum 30-minute rainfall amount, converted to mm/hr.  
   Finally, the storm erosivity is determined as **E × I₃₀**.
    
-8. **`monthly_erosivity.py`**  
+7. **`monthly_erosivity.py`**
+    This function aggregates rainfall erosivity from individual storms to obtain monthly total erosivity for each site.
 
 ## Jupyter Notebook
 
