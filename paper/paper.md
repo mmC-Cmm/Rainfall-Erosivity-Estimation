@@ -20,7 +20,7 @@ bibliography: paper.bib
 
 # Summary
 
-Rainfall erosivity is a key parameter in the Universal Soil Loss Equation (USLE), used to predict soil erosion caused by water. It was developed to quantify the combined effects of rainfall and runoff on soil loss [@Wischmeier & Smith:1978].  
+Rainfall erosivity is a key parameter in the Universal Soil Loss Equation (USLE), used to predict soil erosion caused by water. It was developed to quantify the combined effects of rainfall and runoff on soil loss [@Wischmeier&Smith:1978].  
 
 In this study, rainfall erosivity was computed using the kinetic energy equation based on 5-minute interval rainfall records. Python functions developed in this project are designed to estimate rainfall erosivity from individual storm events. The description of the functions is below:
 
