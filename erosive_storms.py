@@ -9,7 +9,7 @@ import pandas as pd
 
 __all__ = ["filter_erosive_storms"]
 
-# Expect names like STID_YYYY_MM_EVENT.csv (STID can include letters/numbers/underscores/hyphens)
+
 NAME_RE = re.compile(
     r"^(?P<stid>[^_]+)_(?P<year>\d{4})_(?P<month>\d{2})_(?P<event>\d+)\.csv$",
     re.IGNORECASE
