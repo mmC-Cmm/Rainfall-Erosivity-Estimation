@@ -25,17 +25,17 @@ Rainfall erosivity is a key parameter in the Universal Soil Loss Equation (USLE)
 
 2. **`process_intervals.py`**: Since Mesonet’s 5-minute data are cumulative rainfall, this function computes the rainfall amount (mm) and rainfall intensity (mm/hr) for each time interval.
    
-3. **`erosive_storms.py`**: This function excludes storm events with total rainfall < 12.7 mm. The remaining events are treated as erosive storms and are used to estimate rainfall erosivity '[@USDA-ARS:2013]'
-4. 
-5. **`rainfall_energy.py`**: This function calculates unit rainfall energy using the kinetic energy equation and then derives the rainfall energy in each time interval as described in [USDA-ARS (2013)](https://www.ars.usda.gov/ARSUserFiles/60600505/rusle/rusle2_science_doc.pdf).
+3. **`erosive_storms.py`**: This function excludes storm events with total rainfall < 12.7 mm. The remaining events are treated as erosive storms and are used to estimate rainfall erosivity [@USDA-ARS:2013]
+  
+4. **`rainfall_energy.py`**: This function calculates unit rainfall energy using the kinetic energy equation and then derives the rainfall energy in each time interval as described in '@USDA-ARS:2013'.
 
-6. **`max_30_min_rainfall.py`**: This function identifies the maximum rainfall amount within any consecutive 30-minute period using a rolling window method.
+5. **`max_30_min_rainfall.py`**: This function identifies the maximum rainfall amount within any consecutive 30-minute period using a rolling window method.
    
-7. **`rainfall_erosivity.py`**: This function calculates the **kinetic energy of a storm (E)** as the sum of rainfall energy across all time intervals.  
+6. **`rainfall_erosivity.py`**: This function calculates the **kinetic energy of a storm (E)** as the sum of rainfall energy across all time intervals.  
   It then computes the **maximum 30-minute intensity (I₃₀)** from the maximum 30-minute rainfall amount, converted to mm/hr.  
   Finally, the storm erosivity is determined as **E × I₃₀**.
    
-8. **`monthly_erosivity.py`**: This function aggregates rainfall erosivity from individual storms to obtain monthly total erosivity for each site.
+7. **`monthly_erosivity.py`**: This function aggregates rainfall erosivity from individual storms to obtain monthly total erosivity for each site.
 
 
 # Statement of need
