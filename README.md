@@ -76,5 +76,6 @@ The notebook is organized into eight sections, each corresponding to a specific 
 Users may define their own input and output paths or use the default settings provided in the notebook.  
 
 ## Reference 
-USDA-ARS. (2013). Science Documentation: Revised Universal Soil Loss Equation, Version 2 (RUSLE 2). USDA-Agricultural Research Service Washington, DC, USA.
+USDA-ARS. (2013). *Science Documentation: Revised Universal Soil Loss Equation, Version 2 (RUSLE2).* USDA–Agricultural Research Service, Washington, DC, USA.
+
 
