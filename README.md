@@ -75,6 +75,7 @@ The Jupyter notebook **`Reproduction.ipynb`** demonstrates how to reproduce the 
 The notebook is organized into eight sections, each corresponding to a specific function that can be run step by step. Alternatively, the entire workflow can be executed at once using **“Run All.”**  
 Users may define their own input and output paths or use the default settings provided in the notebook.  
 
-
+## Reference 
+USDA-ARS. (2013). Science Documentation: Revised Universal Soil Loss Equation, Version 2 (RUSLE 2). USDA-Agricultural Research Service Washington, DC, USA.<img width="468" height="64" alt="image" src="https://github.com/user-attachments/assets/21c87549-3f8e-4e74-8a7c-b72b38fab1a9" />
 
 
