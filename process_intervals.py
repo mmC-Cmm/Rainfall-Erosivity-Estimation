@@ -1,15 +1,5 @@
 # process_intervals.py
 # -*- coding: utf-8 -*-
-"""
-Universal interval processor for rainfall data.
-
-NOTE:
-- Your CSVs must already have these columns:
-  - time
-  - rain  (cumulative)
-This module computes per-interval depth and intensity, then writes
-monthly CSVs to: <output>/<STID>/<YEAR>/<STID>_<YEARMONTH>.csv
-"""
 
 from pathlib import Path
 from typing import Callable, Dict, Iterable, List, Optional, Union
